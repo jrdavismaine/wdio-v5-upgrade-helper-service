@@ -1,0 +1,24 @@
+{
+  "name": "wdio-v5-upgrade-helper-service",
+  "version": "0.0.1-alpha.1",
+  "description": "Utility library to allow usage of webdriverio v4 commands with webdriverio 5.0. ",
+  "main": "./build/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run lint && rimraf build && babel src --out-dir build",
+    "lint": "eslint --fix src/**/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "copyfiles": "^2.1.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-wdio": "^5.0.3",
+    "pre-commit": "latest"
+  }
+}

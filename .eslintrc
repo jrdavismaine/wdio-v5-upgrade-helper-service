@@ -1,0 +1,15 @@
+{
+  "extends": [
+      "airbnb/base"
+  ],
+  "rules": {
+    "indent": ["error", 4],
+    "func-names": "off",
+    "max-len": ["error", { "code": 122 }]
+  },
+  "plugins": ["wdio"],
+  "env": {
+    "mocha": true,
+    "browser": true
+  }
+}
