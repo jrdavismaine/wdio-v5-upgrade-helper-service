@@ -3,7 +3,7 @@ Webriverio.io to allow usage of all renamed webdriverio v4 commands with webdriv
 
 Note the code in this repo is experimential at this stage. For demo puproses only as of 1/1/19. Beta coming soon!
 
-#Installation instructions
+# Installation instructions
 ```
 git clone https://github.com/jdavis61/wdio-v5-upgrade-helper-service.git
 npm install
