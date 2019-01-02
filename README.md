@@ -5,7 +5,7 @@ Note the code in this repo is experimential as of 1/1/19. Beta coming soon!
 
 # Install via npm
 ```
-npm install wdio-v5-upgrade-helper-service@latest
+npm install wdio-v5-upgrade-helper-service
 ```
 
 # Local Installation instructions
