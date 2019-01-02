@@ -8,8 +8,11 @@
     "build": "npm run lint && rimraf build && babel src --out-dir build",
     "lint": "eslint --fix src/**/*.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "James R Davis III",
+  "bugs": {
+    "url" : "https://github.com/jdavis61/wdio-v5-upgrade-helper-service/issues"
+  },
+  "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
