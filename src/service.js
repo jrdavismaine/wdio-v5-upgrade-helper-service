@@ -23,11 +23,13 @@ export default class UpgradeService {
             addCommandsToElement(element);
         }
 
-        if (commandName === '$$' && result !== undefined) {
+        if (commandName === '$$') {
             const elements = result;
-            elements.forEach(element => {
-                addCommandsToElement(element);
-            });
+            if (elements.length > 0) {
+                elements.forEach(element => {
+                    addCommandsToElement(element);
+                });
+            }
         }
     };
 }
