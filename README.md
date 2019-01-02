@@ -19,6 +19,7 @@ In your webdriver repo install this repo as a local dependency.
 npm install ../path/to/wdio-v5-upgrade-helper-service
 ```
 
+# wdio.conf.js
 Add `v5-upgrade-helper` to the wdio services property:
 ```
 services: ['selenium-standalone', 'v5-upgrade-helper'],
