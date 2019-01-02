@@ -1,6 +1,6 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.4",
   "description": "Utility library to allow usage of webdriverio v4 commands with webdriverio 5.0. ",
   "main": "./build/index",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "author": "James R Davis III",
   "bugs": {
-    "url": "https://github.com/jdavis61/wdio-v5-upgrade-helper-service/issues"
+    "url" : "https://github.com/jdavis61/wdio-v5-upgrade-helper-service/issues"
   },
   "license": "MIT",
   "devDependencies": {
