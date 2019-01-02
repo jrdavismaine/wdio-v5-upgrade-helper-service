@@ -12,6 +12,10 @@
   "bugs": {
     "url" : "https://github.com/jdavis61/wdio-v5-upgrade-helper-service/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdavis61/wdio-v5-upgrade-helper-service.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
