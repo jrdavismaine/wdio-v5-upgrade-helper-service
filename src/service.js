@@ -19,11 +19,11 @@ export default class UpgradeService {
 
     afterCommand(commandName, args, result, error) {
         const element = result;
-        if (commandName === '$') {
+        if (commandName === '$' && result !== undefined) {
             addCommandsToElement(element);
         }
 
-        if (commandName === '$$') {
+        if (commandName === '$$' && result !== undefined) {
             const elements = result;
             elements.forEach(element => {
                 addCommandsToElement(element);
