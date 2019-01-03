@@ -7,17 +7,26 @@ export default class UpgradeService {
             await e.waitForDisplayed(ms, reverse = false);
         });
 
-        browser.addCommand('alertAccept', async () => browser.acceptAlert());
+        browser.addCommand('alertAccept', async () => {
+            await browser.acceptAlert()
+        });
 
-        browser.addCommand('alertDismiss', async () => browser.dismissAlert());
+        browser.addCommand('alertDismiss', async () => {
+            await browser.dismissAlert()
+        });
 
-        browser.addCommand('alertText', async () => browser.getAlertText());
+        browser.addCommand('alertText', async () => {
+            await browser.getAlertText()
+        });
 
         browser.addCommand('element', async selector => $(selector));
 
         browser.addCommand('elements', async selector => $$(selector));
 
-        browser.addCommand('getText', async selector => $(selector).getText());
+        browser.addCommand('getText', async selector => {
+            const e = await $(selector);
+            return await e.getText();
+        });
 
         browser.addCommand('windowHandles', async () => browser.getWindowHandles());
 
