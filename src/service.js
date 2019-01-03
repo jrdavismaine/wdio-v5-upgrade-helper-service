@@ -16,6 +16,18 @@ export default class UpgradeService {
         browser.addCommand('elements', async selector => $$(selector));
 
         browser.addCommand('getText', async selector => $(selector).getText());
+
+        browser.addCommand('windowHandles', async () => browser.getWindowHandles());
+
+        browser.addCommand('windowHandleFullscreen', async () => browser.fullscreenwindow());
+
+        browser.addCommand('windowHandleMaximize', async () => browser.maximizeWindow());
+
+        browser.addCommand('screenshot', async () => browser.takeScreenshot());
+
+        browser.addCommand('reload', async () => browser.reloadSession());
+
+        browser.addCommand('scroll', async () => browser.scrollIntoView());
     }
 
     afterCommand(commandName, args, result, error) {
