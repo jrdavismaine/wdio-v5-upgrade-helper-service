@@ -7,9 +7,11 @@ export default class UpgradeService {
             await e.waitForDisplayed(ms, reverse = false);
         });
 
-        browser.addCommand('alertAccept', async () => {
-            await browser.acceptAlert();
-        });
+        browser.addCommand('alertAccept', async () => browser.acceptAlert());
+
+        browser.addCommand('alertDismiss', async () => browser.dismissAlert());
+
+        browser.addCommand('alertText', async () => browser.getAlertText());
 
         browser.addCommand('element', async selector => $(selector));
 
@@ -28,6 +30,12 @@ export default class UpgradeService {
         browser.addCommand('reload', async () => browser.reloadSession());
 
         browser.addCommand('scroll', async () => browser.scrollIntoView());
+
+        browser.addCommand('getSource', async () => browser.getPageSource());
+
+        browser.addCommand('source', async () => browser.getPageSource());
+
+        browser.addCommand('title', async () => browser.getTitle());
     }
 
     afterCommand(commandName, args, result, error) {
