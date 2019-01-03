@@ -1,35 +1,34 @@
-/* eslint-disable */
-// Element prototype
-// https://github.com/webdriverio/webdriverio/issues/1796
-
 import addCommandsToElement from './addCommandsToElement';
 
 export default class UpgradeService {
-
     before() {
-        browser.addCommand("waitForVisible", async function(selector, ms, reverse = false) {
+        browser.addCommand('waitForVisible', async (selector, ms, reverse = false) => {
             const e = await $(selector);
             await e.waitForDisplayed(ms, reverse = false);
         });
 
-        browser.addCommand("alertAccept", async function() {
-            await browser.acceptAlert();   
+        browser.addCommand('alertAccept', async () => {
+            await browser.acceptAlert();
         });
+
+        browser.addCommand('element', async selector => $(selector));
+
+        browser.addCommand('elements', async selector => $$(selector));
+
+        browser.addCommand('getText', async selector => $(selector).getText());
     }
 
     afterCommand(commandName, args, result, error) {
-        const element = result;
         if (commandName === '$' && result !== undefined) {
-            addCommandsToElement(element);
+            addCommandsToElement(result);
         }
 
         if (commandName === '$$') {
-            const elements = result;
-            if (elements.length > 0) {
-                elements.forEach(element => {
+            if (result.length > 0) {
+                result.forEach((element) => {
                     addCommandsToElement(element);
                 });
             }
         }
-    };
+    }
 }

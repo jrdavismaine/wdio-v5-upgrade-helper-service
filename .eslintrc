@@ -1,11 +1,15 @@
 {
   "extends": [
-      "airbnb/base"
+      "airbnb/base",
+      "plugin:wdio/recommended"
   ],
   "rules": {
     "indent": ["error", 4],
     "func-names": "off",
-    "max-len": ["error", { "code": 122 }]
+    "max-len": ["error", { "code": 122 }],
+    "class-methods-use-this": "off",
+    "no-unused-vars": "off",
+    "no-param-reassign": "off"
   },
   "plugins": ["wdio"],
   "env": {
