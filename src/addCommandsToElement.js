@@ -1,6 +1,12 @@
 const addCommandsToElement = (element) => {
     element.addCommand('waitForVisible', async (ms, reverse = false) => {
-        await element.waitForDisplayed(ms, reverse);
+        /* Handle waitForVisible(true) or waitForVisible(false); Using waitForVisible this way
+           is not valid but worked at one point. Adding for backwards compatability. */
+        if (typeof ms === 'boolean') {
+            await element.waitForDisplayed(undefined, ms);
+        } else {
+            await element.waitForDisplayed(ms, reverse);
+        }
     });
 
     element.addCommand('isVisible', async () => element.isDisplayed());
