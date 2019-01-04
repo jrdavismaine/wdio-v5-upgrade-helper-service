@@ -45,6 +45,16 @@ export default class UpgradeService {
         browser.addCommand('source', async () => browser.getPageSource());
 
         browser.addCommand('title', async () => browser.getTitle());
+
+        /* 
+            The getCookie param was a string in v4. Reason for not changing to array.
+            https://github.com/webdriverio-boneyard/v4/blob/master/lib/commands/getCookie.js 
+        */
+        browser.addCommand('getCookie', async (name = null) => browser.getCookies(name));
+        
+        browser.addCommand('setCookie', async (cookieObj) => browser.setCookies(cookieObj));
+
+        browser.addCommand('deleteCookie', async (name = null) => browser.deleteCookies(name));
     }
 
     afterCommand(commandName, args, result, error) {
