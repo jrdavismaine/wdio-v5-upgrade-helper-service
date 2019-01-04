@@ -36,6 +36,9 @@ Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.
 | :----:  | :-----:  | :-----: |
 | browser | waitForVisible | N/A |
 | browser | isVisible | N/A |
+| browser | click | N/A |
+| browser | getAttribute | N/A |
+| browser | getCssProperty | N/A |
 | browser | alertAccept | acceptAlert |
 | browser | alertDismiss | dismissAlert |
 | browser | alertText | getAlertText |

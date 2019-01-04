@@ -7,6 +7,26 @@ export default class UpgradeService {
             await e.waitForDisplayed(ms, reverse = false);
         });
 
+        browser.addCommand('isVisible', async (selector) => {
+            const e = await $(selector);
+            return e.isDisplayed();
+        });
+
+        browser.addCommand('click', async (selector) => {
+            const e = await $(selector);
+            await e.click();
+        });
+
+        browser.addCommand('getAttribute', async (selector, attributeName) => {
+            const e = await $(selector);
+            return e.getAttribute(attributeName);
+        });
+
+        browser.addCommand('getCssProperty', async (selector, propertyName) => {
+            const e = await $(selector);
+            return e.getCSSProperty(propertyName);
+        });
+
         browser.addCommand('alertAccept', async () => {
             await browser.acceptAlert();
         });
