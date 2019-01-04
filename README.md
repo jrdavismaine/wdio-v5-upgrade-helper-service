@@ -55,6 +55,7 @@ Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.
 | browser | getCookie | getCookies |
 | browser | setCookie | setCookies |
 | browser | deleteCookie | deleteCookies |
+| browser | close | deleteSession |
 | element | waitForVisible | waitForDisplayed |
 | element | isVisible | isDisplayed |
 | element | getCssProperty | getCSSProperty |
