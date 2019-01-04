@@ -1,5 +1,5 @@
 # wdio-v5-upgrade-helper-service
-Webriverio.io plugin to allow usage of all renamed webdriverio v4 commands with webdriverio 5.0. All v4 commands are wrappers to their replacements, e.g. waitForVisible is a wrapper function for waitForDisplayed.
+Webriverio.io plugin to allow usage of some renamed webdriverio v4 commands with webdriverio 5.0. All v4 commands are wrappers to their replacements, e.g. waitForVisible is a wrapper function for waitForDisplayed.
 
 Note the code in this repo is experimential as of 1/1/19. Beta coming soon!
 
