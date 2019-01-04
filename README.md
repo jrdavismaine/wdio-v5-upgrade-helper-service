@@ -31,3 +31,31 @@ This plugin will allow developers to upgrade to webdriver 5.0 without having to 
 # Recommendation
 Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.io project to version 5.0, e.g. do not make a permanent dependency. Meant as a tool to make upgrading easier.
 
+# Supported V4 commands
+| Object  | V4 name  | V5 name |
+| :----:  | :-----:  | :-----: |
+| browser | waitForVisible | N/A |
+| browser | isVisible | N/A |
+| browser | alertAccept | acceptAlert |
+| browser | alertDismiss | dismissAlert |
+| browser | alertText | getAlertText |
+| browser | element | findElement or $ |
+| browser | elements | findElements or $$ |
+| browser | getText | N/A |
+| browser | windowHandles | getWindowHandles |
+| browser | windowHandleFullscreen | fullscreenwindow |
+| browser | windowHandleMaximize | maximizeWindow |
+| browser | screenshot | takeScreenshot |
+| browser | reload | reloadSession | 
+| browser | scroll | scrollIntoView |
+| browser | getSource | getPageSource |
+| browser | source | getPageSource |
+| browser | title | getTitle |
+| browser | getCookie | getCookies |
+| browser | setCookie | setCookies |
+| browser | deleteCookie | deleteCookies |
+| element | waitForVisible | waitForDisplayed |
+| element | isVisible | isDisplayed |
+| element | getCssProperty | getCSSProperty |
+| element | clearElement | clearValue |
+| element | getElementSize | getSize |
