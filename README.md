@@ -53,6 +53,7 @@ Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.
 | browser | setViewportSize | setWindowSize |
 | browser | scroll | scrollIntoView |
 | browser | source | getPageSource |
+| browser | switchTo | switchToWindow (1)|
 | browser | title | getTitle |
 | browser | waitForExist | N/A |
 | browser | waitForVisible | N/A |
@@ -64,3 +65,11 @@ Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.
 | element | getElementSize | getSize |
 | element | isVisible | isDisplayed |
 | element | waitForVisible | waitForDisplayed |
+
+(1) The param for switchToWindow is a window handle string
+which should be obtained from the browser.getWindowHandles command.
+```
+const windowHandle = browser.getWindowHandles()[1];
+browser.switchTab(windowHandle); // V4
+browser.switchToWindow(windowHandle); // V5
+```

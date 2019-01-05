@@ -92,6 +92,8 @@ class UpgradeService {
 
         browser.addCommand('source', async () => browser.getPageSource());
 
+        browser.addCommand('switchTab', async windowHandle => browser.switchToWindow(windowHandle));
+
         browser.addCommand('title', async () => browser.getTitle());
 
         browser.addCommand('waitForVisible', async (selector, ms, reverse = false) => {
