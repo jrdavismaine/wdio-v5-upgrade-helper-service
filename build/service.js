@@ -29,8 +29,6 @@ class UpgradeService {
             await e.click();
         });
 
-        browser.addCommand('deleteCookie', async (name = null) => browser.deleteCookies(name));
-
         browser.addCommand('element', async selector => $(selector));
 
         browser.addCommand('elements', async selector => $$(selector));

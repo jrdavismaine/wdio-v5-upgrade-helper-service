@@ -36,7 +36,6 @@ Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.
 | browser | alertDismiss | dismissAlert |
 | browser | alertText | getAlertText |
 | browser | click | N/A |
-| browser | deleteCookie | deleteCookies |
 | browser | element | findElement or $ |
 | browser | elements | findElements or $$ |
 | browser | getAttribute | N/A |
