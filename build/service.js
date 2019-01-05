@@ -74,6 +74,11 @@ class UpgradeService {
 
         browser.addCommand('setCookie', async cookieObj => browser.setCookies(cookieObj));
 
+        browser.addCommand('setValue', async (selector, value) => {
+            const e = await $(selector);
+            await e.setValue(value);
+        });
+
         browser.addCommand('source', async () => browser.getPageSource());
 
         browser.addCommand('title', async () => browser.getTitle());
