@@ -49,6 +49,7 @@ Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.
 | browser | reload | reloadSession | 
 | browser | screenshot | takeScreenshot |
 | browser | setCookie | setCookies |
+| browser | setValue | N/A |
 | browser | scroll | scrollIntoView |
 | browser | source | getPageSource |
 | browser | title | getTitle |
