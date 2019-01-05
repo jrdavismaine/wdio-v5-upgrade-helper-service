@@ -1,6 +1,6 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Utility library to allow usage of webdriverio v4 commands with webdriverio 5.0. ",
   "main": "./build/index",
   "scripts": {
@@ -18,6 +18,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@wdio/webdriver-mock-service": "^5.2.2",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
