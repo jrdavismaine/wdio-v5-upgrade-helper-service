@@ -69,6 +69,17 @@ export default class UpgradeService {
             await e.setValue(value);
         });
 
+        /**
+         * In v4 the param is an object, in v5 width and height is passed.
+         * Keeping as an object for backwards compatability.
+         *
+         * REF: https://github.com/webdriverio-boneyard/v4/blob/master/lib/commands/setViewportSize.js
+         */
+        browser.addCommand('setViewportSize', async (widthHeightObject) => {
+            const { width, height } = widthHeightObject;
+            await browser.setWindowSize(width, height);
+        });
+
         browser.addCommand('source', async () => browser.getPageSource());
 
         browser.addCommand('title', async () => browser.getTitle());
