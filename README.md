@@ -32,31 +32,33 @@ Do not use this plugin as a crutch but as a tool to help upgrade your webdriver.
 # Supported V4 commands
 | Object  | V4 name  | V5 name |
 | :----:  | :-----:  | :-----: |
-| browser | waitForVisible | N/A |
-| browser | isVisible | N/A |
-| browser | click | N/A |
-| browser | getAttribute | N/A |
-| browser | getCssProperty | N/A |
 | browser | alertAccept | acceptAlert |
 | browser | alertDismiss | dismissAlert |
 | browser | alertText | getAlertText |
+| browser | click | N/A |
+| browser | deleteCookie | deleteCookies |
 | browser | element | findElement or $ |
 | browser | elements | findElements or $$ |
+| browser | getAttribute | N/A |
+| browser | getCookie | getCookies |
+| browser | getCssProperty | N/A |
+| browser | getSource | getPageSource |
 | browser | getText | N/A |
+| browser | isExisting | N/A |
+| browser | isVisible | N/A |
+| browser | screenshot | takeScreenshot |
+| browser | reload | reloadSession | 
+| browser | setCookie | setCookies |
+| browser | scroll | scrollIntoView |
+| browser | source | getPageSource |
+| browser | title | getTitle |
 | browser | windowHandles | getWindowHandles |
 | browser | windowHandleFullscreen | fullscreenwindow |
 | browser | windowHandleMaximize | maximizeWindow |
-| browser | screenshot | takeScreenshot |
-| browser | reload | reloadSession | 
-| browser | scroll | scrollIntoView |
-| browser | getSource | getPageSource |
-| browser | source | getPageSource |
-| browser | title | getTitle |
-| browser | getCookie | getCookies |
-| browser | setCookie | setCookies |
-| browser | deleteCookie | deleteCookies |
-| element | waitForVisible | waitForDisplayed |
+| browser | waitForExist | N/A |
+| browser | waitForVisible | N/A |
+| element | clearElement | clearValue |
 | element | isVisible | isDisplayed |
 | element | getCssProperty | getCSSProperty |
-| element | clearElement | clearValue |
 | element | getElementSize | getSize |
+| element | waitForVisible | waitForDisplayed |
