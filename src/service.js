@@ -39,10 +39,6 @@ export default class UpgradeService {
             await browser.getAlertText();
         });
 
-        browser.addCommand('close', async () => {
-            await browser.deleteSession();
-        });
-        
         browser.addCommand('element', async selector => $(selector));
 
         browser.addCommand('elements', async selector => $$(selector));
