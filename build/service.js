@@ -40,7 +40,19 @@ class UpgradeService {
 
         /* The getCookie param was a string in v4. Reason for not changing to array.
             https://github.com/webdriverio-boneyard/v4/blob/master/lib/commands/getCookie.js */
-        browser.addCommand('getCookie', async (name = null) => browser.getCookies(name));
+
+        /**
+         * The getCookie param was a string in v4. Reason for not changing to array.
+         * Also if a name parameter is not passed an array of cookies will be returned,
+         * otherwise the cookie object is returned. If not found then the return obj will be undefined.
+         */
+        browser.addCommand('getCookie', async name => {
+            if (name === undefined) {
+                return browser.getCookies();
+            }
+            const cookie = await browser.getCookies(name);
+            return cookie[0];
+        });
 
         browser.addCommand('getCssProperty', async (selector, propertyName) => {
             const e = await $(selector);
