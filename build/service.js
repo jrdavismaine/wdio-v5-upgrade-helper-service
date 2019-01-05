@@ -80,12 +80,12 @@ class UpgradeService {
 
         browser.addCommand('waitForVisible', async (selector, ms, reverse = false) => {
             const e = await $(selector);
-            await e.waitForDisplayed(ms, reverse = false);
+            await e.waitForDisplayed(ms, reverse);
         });
 
         browser.addCommand('waitForExist', async (selector, ms, reverse = false) => {
             const e = await $(selector);
-            await e.waitForExist(ms, reverse = false);
+            await e.waitForExist(ms, reverse);
         });
 
         browser.addCommand('windowHandles', async () => browser.getWindowHandles());
