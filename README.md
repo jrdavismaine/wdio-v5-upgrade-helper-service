@@ -24,10 +24,10 @@ services: ['selenium-standalone', 'v5-upgrade-helper'],
 ```
 
 # Purpose
-This plugin will allow developers to use to webdriver 5.0 (v5) without having to change all of the renamed v4 commands and update their entire code base at once.
+This plugin will allow developers / developement teams to upgrade to webdriver 5.0 without having to change all of the renamed v4 commands in their codebase.
 
 # Recommendation
-If you are using this plugin, make it a point to convert your code to v5 format, e.g. remove all `browser.click(selector)` statements, before each merge to master. Avoid the tempation to keep this plugin installed permanently. Doing this will only make upgrading to future versions of webdriverio, e.g. webdriverio 6.0, much more difficult. The purpose of this plugin is to make upgrading from v4 to v5 easier and avoid having to change everything at once.
+If you are using this plugin, make it a point to try and convert your code to v5 format with each merge to master. Keeping the old v4 code longer than necessary will make upgrading to future versions of webdriverio, e.g. version 6, much harder.
 
 # Supported V4 commands
 | Object  | V4 name  | V5 name |
