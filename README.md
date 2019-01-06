@@ -1,5 +1,5 @@
 # wdio-v5-upgrade-helper-service
-This plugin will allow developers / developement teams to upgrade to webdriver 5.0 without having to change all of the renamed v4 commands in their codebase.
+This plugin will allow developers to upgrade to webdriver 5.0 without having to change all of the renamed v4 commands in their codebase.
 
 # Install via npm
 ```
