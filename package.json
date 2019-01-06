@@ -1,6 +1,6 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Utility library to allow usage of webdriverio v4 commands with webdriverio 5.0. ",
   "main": "./build/index",
   "scripts": {
@@ -18,10 +18,16 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "@wdio/cli": "^5.2.2",
+    "@wdio/dot-reporter": "^5.2.2",
+    "@wdio/local-runner": "^5.2.2",
+    "@wdio/sync": "^5.2.2",
     "@wdio/webdriver-mock-service": "^5.2.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
     "copyfiles": "^2.1.0",
     "eslint": "^4.18.2",
     "eslint-config-airbnb": "^17.1.0",
@@ -29,5 +35,8 @@
     "eslint-plugin-wdio": "^5.0.3",
     "pre-commit": "latest"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@wdio/selenium-standalone-service": "^5.2.2",
+    "mocha": "^5.2.0"
+  }
 }

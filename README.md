@@ -1,5 +1,5 @@
 # wdio-v5-upgrade-helper-service
-Webriverio.io plugin to allow usage of some renamed webdriverio v4 commands with webdriverio 5.0. All v4 commands are wrappers to their replacements, e.g. waitForVisible is a wrapper function for waitForDisplayed.
+This plugin will allow developers / developement teams to upgrade to webdriver 5.0 without having to change all of the renamed v4 commands in their codebase.
 
 # Install via npm
 ```
@@ -22,9 +22,6 @@ Add `v5-upgrade-helper` to the wdio services property:
 ```
 services: ['selenium-standalone', 'v5-upgrade-helper'],
 ```
-
-# Purpose
-This plugin will allow developers / developement teams to upgrade to webdriver 5.0 without having to change all of the renamed v4 commands in their codebase.
 
 # Recommendation
 If you are using this plugin, make it a point to try and convert your code to v5 format with each merge to master. Keeping the old v4 code longer than necessary will make upgrading to future versions of webdriverio, e.g. version 6, much harder.
