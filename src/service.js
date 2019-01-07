@@ -118,7 +118,7 @@ export default class UpgradeService {
             addCommandsToElement(result);
         }
 
-        if (commandName === '$$') {
+        if (commandName === '$$' && result !== undefined) {
             if (result.length > 0) {
                 result.forEach((element) => {
                     addCommandsToElement(element);

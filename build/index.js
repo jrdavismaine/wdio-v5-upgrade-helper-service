@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _service = require('./service');
-
-var _service2 = _interopRequireDefault(_service);
+var _service = _interopRequireDefault(require("./service"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _service2.default;
+var _default = _service.default;
+exports.default = _default;
