@@ -7,7 +7,7 @@
     "lint": "eslint --fix src/**/*.js",
     "build": "npm run lint && rimraf build && babel src --out-dir build",
     "test": "echo \"No tests\"",
-    "e2e": "wdio wdio.conf.js"
+    "e2e": "echo \"Starting end-to-end tests\" && wdio wdio.conf.js"
   },
   "pre-commit": [
     "build",
