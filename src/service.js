@@ -90,7 +90,6 @@ export default class UpgradeService {
             await browser.setWindowSize(width, height);
         });
 
-        /* Same as getSource. */
         browser.addCommand('source', async () => browser.getPageSource());
 
         browser.addCommand('switchTab', async windowHandle => browser.switchToWindow(windowHandle));
