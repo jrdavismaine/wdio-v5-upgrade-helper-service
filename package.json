@@ -1,7 +1,7 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "0.0.29",
-  "description": "Utility library to allow renamed webdriverio v4 commands with webdriverio 5.0. ",
+  "version": "0.0.30",
+  "description": "Utility library to allow renamed webdriverio v4 commands to be used with webdriverio 5.0. ",
   "main": "./build/index",
   "scripts": {
     "test": "echo \"Tests TODO\"",
