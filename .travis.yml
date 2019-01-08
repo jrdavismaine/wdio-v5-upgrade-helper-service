@@ -1,7 +1,12 @@
 language: node_js
-
 node_js:
-  - 8
-
+- 8
 before_script:
-  - npm run build
+- npm run build
+deploy:
+  provider: npm
+  email: jrdavisdevelopment@gmail.com
+  api_key:
+    secure: imDB0Olw6PUHioi85fTny6zk3xXGG9TNBlAl+oNqVMTaa/vQF5AZnhVgzrRvdMn+SStohD3wKvtG6gY58WeCIJHIxCl5MWf6fze8Ni+JpfPIQjDvJKRMPe3orMfEH6ZGO3OyZEzczq/7YNDX1I+cJgeTz0CbgOw/Ky53o4fZqsjmWQVdIqCtLSpUwKe8p1d8Vwk8wuBmoXWe0l7fMJgSVjgjiEWrbCd4axML/w44P3Y60VIs9JpKEq79UORIwlG9XcnaMnSwnO9FwIQOvy3YtpdWkAfORUAFmsWJz1WGkHKivTOY2/uV3op874QrJN3pp++ldGhZ8dxN/hxBISUPSm0ZcW/G8KcaM7IZiRUwOHpZm5hewG8JjYBiYLl3FVfzohNYFWvjgelRPR5RYcPULSBhmCCZpdB/W0f5SWjDx+dUEP1qiYVk3gReSGh05OU0WMiw26fQJAGXzEq1RDe2dBU+W+ibXMlbS4eBTmY2oJdkhn7GKZXTz2hmiyusiiZkC0nI7sRT8SOKgfkK6hS92dBT4YhZXsNScSdKZaYyjwF524qIHpRuNMmne4JlLMVisW1HDzFRUIQGacJNv6um0t39c+yt5uj6x8L6q04LdReJ58iku/78Jjjyw6Eec663Wtkcp/lM4WgwgzkL62BhAoLr8TbdrRHHXYrHWTgsDEQ=
+  on:
+    repo: jdavis61/wdio-v5-upgrade-helper-service
