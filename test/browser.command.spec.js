@@ -19,8 +19,12 @@ describe('browser command test suite: ', () => {
         assert.equal(linkText, 'Welcome to the-internet');
     });
 
-    it('browser getAttriute test', () => {
+    it('browser getAttribute test', () => {
         const attr = browser.getAttribute('.heading', 'class');
         assert.equal(attr, 'heading');
     });
+
+    it('browser isExisting test', () => {
+        assert.equal(browser.isExisting('.heading'), true);
+    })
 });
