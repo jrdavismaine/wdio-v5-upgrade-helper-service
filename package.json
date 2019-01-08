@@ -8,7 +8,7 @@
     "build": "npm run lint && rimraf build && babel src --out-dir build",
     "lint": "eslint --fix src/**/*.js"
   },
-  "author": "James R Davis III",
+  "author": "James R Davis IIffffffI",
   "bugs": {
     "url": "https://github.com/jdavis61/wdio-v5-upgrade-helper-service/issues"
   },
