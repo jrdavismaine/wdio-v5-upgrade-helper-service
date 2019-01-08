@@ -1,6 +1,6 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "Utility library to allow renamed webdriverio v4 commands with webdriverio 5.0. ",
   "main": "./build/index",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "npm run lint && rimraf build && babel src --out-dir build",
     "lint": "eslint --fix src/**/*.js"
   },
-  "author": "James R Davis IIffffffI",
+  "author": "James R Davis III",
   "bugs": {
     "url": "https://github.com/jdavis61/wdio-v5-upgrade-helper-service/issues"
   },
