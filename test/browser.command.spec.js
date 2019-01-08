@@ -18,4 +18,9 @@ describe('browser command test suite: ', () => {
         const linkText = browser.getText('.heading');
         assert.equal(linkText, 'Welcome to the-internet');
     });
+
+    it('browser getAttriute test', () => {
+        const attr = browser.getAttribute('.heading', 'class');
+        assert.equal(attr, 'heading');
+    });
 });
