@@ -28,9 +28,6 @@ export default class UpgradeService {
             return e.getAttribute(attributeName);
         });
 
-        /* The getCookie param was a string in v4. Reason for not changing to array.
-            https://github.com/webdriverio-boneyard/v4/blob/master/lib/commands/getCookie.js */
-
         /**
          * The getCookie param was a string in v4. Reason for not changing to array.
          * Also if a name parameter is not passed an array of cookies will be returned,
