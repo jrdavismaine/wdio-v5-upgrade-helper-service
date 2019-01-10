@@ -6,8 +6,11 @@ node_js:
 - 8
 before_script:
 - # start your web application and listen on `localhost`
+- ls -la
 - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 &
 - npm run build
+before_deploy:
+- ls -la
 deploy:
   provider: npm
   email: jrdavisdevelopment@gmail.com
