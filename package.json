@@ -41,5 +41,7 @@
     "pre-commit": "latest",
     "webdriverio": "^5.2.8"
   },
-  "dependencies": {}
+  "peerDependencies": {
+    "loglevel-plugin-prefix": "^0.8.4"
+  }
 }
