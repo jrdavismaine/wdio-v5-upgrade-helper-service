@@ -9,6 +9,9 @@ before_script:
 - ls -la
 - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 &
 - npm run build
+- ls -la
+after_script:
+- ls -la
 before_deploy:
 - ls -la
 deploy:
