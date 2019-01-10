@@ -69,7 +69,7 @@ browser.switchTab(windowHandle); // V4
 browser.switchToWindow(windowHandle); // V5
 ```
 
-# Attempted - Won't Do.
+# Attempted - Won't Do
 | Object  | V4 name  | V5 name | Workaround |
 | :----:  | :-----:  | :-----: | :--------- |
 | element | getElementSize | Kept getting Wrong parameters applied for getElementSize | Rename to getSize |
