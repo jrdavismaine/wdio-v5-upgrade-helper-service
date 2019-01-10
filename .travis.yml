@@ -1,7 +1,12 @@
+dist: trusty
+addons:
+  chrome: stable
 language: node_js
 node_js:
 - 8
 before_script:
+- # start your web application and listen on `localhost`
+- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 &
 - npm run build
 deploy:
   provider: npm
