@@ -1,6 +1,8 @@
 # wdio-v5-upgrade-helper-service
 This plugin will allow developers to upgrade to webdriver 5.0 without having to change all of the renamed v4 commands in their codebase.
 
+Note this plugin only works with webdriver 5.2.8 and up. Please upgrade to the latest version of [webdriverio](https://github.com/webdriverio/webdriverio) if you have not done so already.
+
 # Install via npm
 ```
 npm install wdio-v5-upgrade-helper-service
@@ -70,6 +72,6 @@ browser.switchToWindow(windowHandle); // V5
 ```
 
 # Attempted
-| Object  | V4 name  | V5 name | Workaround |
-| :----:  | :-----:  | :-----: | :--------- |
+| Object  | V4 name  | V5 error / reason | V5 Workaround |
+| :----:  | :-----:  | :---------------- | :------------ |
 | element | getElementSize | Kept getting Wrong parameters applied for getElementSize | Rename to getSize |
