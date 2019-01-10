@@ -58,6 +58,7 @@ If you are using this plugin, make it a point to try and convert your code to v5
 | browser | windowHandleMaximize | maximizeWindow |
 | element | clearElement | clearValue |
 | element | getCssProperty | getCSSProperty |
+| element | getElementSize | getSize |
 | element | isVisible | isDisplayed |
 | element | waitForVisible | waitForDisplayed |
 
@@ -68,8 +69,3 @@ const windowHandle = browser.getWindowHandles()[1];
 browser.switchTab(windowHandle); // V4
 browser.switchToWindow(windowHandle); // V5
 ```
-
-# Attempted - Won't Do
-| Object  | V4 name  | V5 name | Workaround |
-| :----:  | :-----:  | :-----: | :--------- |
-| element | getElementSize | Kept getting Wrong parameters applied for getElementSize | Rename to getSize |

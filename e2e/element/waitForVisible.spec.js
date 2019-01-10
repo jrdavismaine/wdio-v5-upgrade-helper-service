@@ -1,6 +1,6 @@
 import assert from 'assert';
 
-describe('waitForVisible command test suite: ', () => {
+describe('browser command test suite: ', () => {
     beforeEach(() => {
         browser.url('/');
     });
@@ -26,12 +26,12 @@ describe('waitForVisible command test suite: ', () => {
         assert.doesNotThrow(() => { e.waitForVisible(1000, false); });
     });
 
-    it.skip('element exists: element.waitForVisible(true) error, element always visible', () => {
+    it('element exists: element.waitForVisible(true) error, element always visible', () => {
         const e = $('.heading');
         assert.throws(() => { e.waitForVisible(true); });
     });
 
-    it.skip('element exists: element.waitForVisible(1000, true) error, element always visible', () => {
+    it('element exists: element.waitForVisible(1000, true) error, element always visible', () => {
         const e = $('.heading');
         assert.throws(() => { e.waitForVisible(1000, true); });
     });
