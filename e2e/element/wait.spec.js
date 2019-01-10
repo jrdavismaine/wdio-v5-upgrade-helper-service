@@ -1,7 +1,7 @@
 import assert from 'assert';
 import domElementUtility from '../fixtures/domElementUtility';
 
-describe('browser command test suite: ', () => {
+describe('wait commands test suite: ', () => {
     beforeEach(() => {
         browser.url('/');
     });
@@ -23,5 +23,4 @@ describe('browser command test suite: ', () => {
         $('#elem').waitForVisible(5000);
         // assert.throws(() => { $('#elem').waitForVisible(5000); }, Error);
     });
-
 });

@@ -26,5 +26,5 @@ describe('browser command test suite: ', () => {
 
     it('browser isExisting test', () => {
         assert.equal(browser.isExisting('.heading'), true);
-    })
+    });
 });
