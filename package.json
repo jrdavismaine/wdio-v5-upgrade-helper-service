@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --fix src/**/*.js e2e/**/*.js",
     "build": "npm run lint && rimraf build && babel src --out-dir build",
-    "test": "echo 'Disabling tests'"
+    "test": "wdio wdio.conf.js"
   },
   "pre-commit": [
     "build",
