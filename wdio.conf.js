@@ -104,6 +104,7 @@ exports.config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
+    sync: true,
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
