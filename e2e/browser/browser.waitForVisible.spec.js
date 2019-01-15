@@ -1,6 +1,6 @@
 import assert from 'assert';
 
-describe('browser command test suite: ', () => {
+describe('browser.waitForVisible test suite: ', () => {
     before(() => {
         browser.url('/');
     });

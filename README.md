@@ -44,6 +44,7 @@ If you are using this plugin, make it a point to try and convert your code to v5
 | browser | getText | N/A |
 | browser | isExisting | N/A |
 | browser | isVisible | N/A |
+| browser | moveToObject | N/A |
 | browser | reload | reloadSession | 
 | browser | screenshot | takeScreenshot |
 | browser | setCookie | setCookies |
@@ -60,6 +61,7 @@ If you are using this plugin, make it a point to try and convert your code to v5
 | browser | windowHandleMaximize | maximizeWindow |
 | element | clearElement | clearValue |
 | element | getCssProperty | getCSSProperty |
+| element | moveToObject | moveTo |
 | element | isVisible | isDisplayed |
 | element | waitForVisible | waitForDisplayed |
 

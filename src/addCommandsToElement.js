@@ -14,5 +14,9 @@ const addCommandsToElement = (element) => {
     element.addCommand('getCssProperty', cssProperty => element.getCSSProperty(cssProperty));
 
     element.addCommand('clearElement', () => element.clearValue());
+
+    element.addCommand('moveToObject', (x = undefined, y = undefined) => {
+        element.moveTo(x, y);
+    });
 };
 export default addCommandsToElement;

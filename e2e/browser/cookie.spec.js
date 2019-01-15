@@ -1,6 +1,6 @@
 import assert from 'assert';
 
-describe('browser command test suite: ', () => {
+describe('browser cookies test suite: ', () => {
     context('get cookies test suite', () => {
         before(() => {
             browser.url('/abtest');
