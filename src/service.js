@@ -63,6 +63,10 @@ export default class UpgradeService {
             return e.isDisplayed();
         });
 
+        browser.addCommand('moveToObject', (selector, x = undefined, y = undefined) => {
+            $(selector).moveTo(x, y);
+        });
+
         browser.addCommand('reload', () => browser.reloadSession());
 
         browser.addCommand('screenshot', () => browser.takeScreenshot());
