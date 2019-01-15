@@ -1,6 +1,6 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Utility library to allow renamed webdriverio v4 commands to be used with webdriverio 5.0. ",
   "main": "./build/index",
   "scripts": {
@@ -27,8 +27,8 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/register": "^7.0.0",
-    "@wdio/cli": "^5.2.8",
-    "@wdio/local-runner": "^5.2.8",
+    "@wdio/cli": "^5.3.0",
+    "@wdio/local-runner": "^5.3.0",
     "@wdio/mocha-framework": "^5.2.8",
     "@wdio/selenium-standalone-service": "^5.2.2",
     "@wdio/spec-reporter": "^5.2.3",
@@ -39,7 +39,7 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-wdio": "^5.0.3",
     "pre-commit": "latest",
-    "webdriverio": "^5.2.8"
+    "webdriverio": "^5.3.0"
   },
   "peerDependencies": {
     "loglevel-plugin-prefix": "^0.8.4"
