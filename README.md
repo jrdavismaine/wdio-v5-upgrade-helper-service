@@ -76,4 +76,5 @@ browser.switchToWindow(windowHandle); // V5
 # Attempted
 | Object  | V4 name  | V5 error / reason | V5 Workaround |
 | :----:  | :-----:  | :---------------- | :------------ |
-| element | getElementSize | Kept getting Wrong parameters applied for getElementSize | Rename to getSize |
+| element | getElementSize | Kept getting Wrong parameters applied for getElementSize. | Rename to getSize. |
+| browser | execute | Search and replace easier. | Remove .value from all browser.execute scripts. |
