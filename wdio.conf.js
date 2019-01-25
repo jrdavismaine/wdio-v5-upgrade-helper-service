@@ -1,5 +1,4 @@
-const UpgradeService = require('./build/index.js');
-const v5_upgrade_helper_service = new UpgradeService.default;
+const UpgradeService = require('./build/index.js').default;
 
 exports.config = {
     //
@@ -97,7 +96,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone', v5_upgrade_helper_service],
+    services: ['selenium-standalone', [UpgradeService]],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
