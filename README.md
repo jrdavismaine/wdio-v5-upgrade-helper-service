@@ -8,25 +8,11 @@ Note this plugin only works with webdriver 5.2.8 and up. Please upgrade to the l
 npm install wdio-v5-upgrade-helper-service
 ```
 
-# Local Installation instructions
-```
-git clone https://github.com/jdavis61/wdio-v5-upgrade-helper-service.git
-npm install
-npm run build
-```
-In your webdriver repo install this repo as a local dependency.
-```
-npm install ../path/to/wdio-v5-upgrade-helper-service
-```
-
 # wdio.conf.js
 Add `v5-upgrade-helper` to the wdio services property:
 ```
 services: ['selenium-standalone', 'v5-upgrade-helper'],
 ```
-
-# Recommendation
-If you are using this plugin, make it a point to try and convert your code to v5 format with each merge to master. Keeping the old v4 code longer than necessary will make upgrading to future versions of webdriverio, e.g. version 6, much harder.
 
 # Supported V4 commands
 | Object  | V4 name  | V5 name |
