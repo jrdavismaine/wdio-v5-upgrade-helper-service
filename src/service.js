@@ -1,31 +1,33 @@
-import addCommandsToElement from './addCommandsToElement';
-
 export default class UpgradeService {
     before() {
-        browser.addCommand('alertAccept', () => {
-            browser.acceptAlert();
+        // Add commands to the browser scope.
+        browser.addCommand('alertAccept', function () {
+            this.acceptAlert();
         });
 
-        browser.addCommand('alertDismiss', () => {
-            browser.dismissAlert();
+        browser.addCommand('alertDismiss', function () {
+            this.dismissAlert();
         });
 
-        browser.addCommand('alertText', () => {
-            browser.getAlertText();
+        browser.addCommand('alertText', function () {
+            return this.getAlertText();
         });
 
-        browser.addCommand('click', (selector) => {
-            const e = $(selector);
-            e.click();
+        browser.addCommand('click', function (selector) {
+            this.$(selector).click();
         });
 
-        browser.addCommand('element', selector => $(selector));
+        browser.addCommand('element', function (selector) {
+            return this.$(selector);
+        });
 
-        browser.addCommand('elements', selector => $$(selector));
 
-        browser.addCommand('getAttribute', (selector, attributeName) => {
-            const e = $(selector);
-            return e.getAttribute(attributeName);
+        browser.addCommand('elements', function (selector) {
+            return this.$$(selector);
+        });
+
+        browser.addCommand('getAttribute', function (selector, attributeName) {
+            return this.$(selector).getAttribute(attributeName);
         });
 
         /**
@@ -33,51 +35,56 @@ export default class UpgradeService {
          * Also if a name parameter is not passed an array of cookies will be returned,
          * otherwise the cookie object is returned. If not found then the return obj will be undefined.
          */
-        browser.addCommand('getCookie', (name) => {
+        browser.addCommand('getCookie', function (name) {
             if (name === undefined) {
-                return browser.getCookies();
+                return this.getCookies();
             }
-            const cookie = browser.getCookies(name);
+            const cookie = this.getCookies(name);
             return cookie[0];
         });
 
-        browser.addCommand('getCssProperty', (selector, propertyName) => {
-            const e = $(selector);
-            return e.getCSSProperty(propertyName);
+        browser.addCommand('getCssProperty', function (selector, propertyName) {
+            return this.$(selector).getCSSProperty(propertyName);
         });
 
-        browser.addCommand('getSource', () => browser.getPageSource());
-
-        browser.addCommand('getText', (selector) => {
-            const e = $(selector);
-            return e.getText();
+        browser.addCommand('getSource', function () {
+            return this.getPageSource();
         });
 
-        browser.addCommand('isExisting', (selector) => {
-            const e = $(selector);
-            return e.isExisting();
+        browser.addCommand('getText', function (selector) {
+            return this.$(selector).getText();
         });
 
-        browser.addCommand('isVisible', (selector) => {
-            const e = $(selector);
-            return e.isDisplayed();
+        browser.addCommand('isExisting', function (selector) {
+            return this.$(selector).isExisting();
         });
 
-        browser.addCommand('moveToObject', (selector, x = undefined, y = undefined) => {
-            $(selector).moveTo(x, y);
+        browser.addCommand('isVisible', function (selector) {
+            return this.$(selector).isDisplayed();
         });
 
-        browser.addCommand('reload', () => browser.reloadSession());
+        browser.addCommand('moveToObject', function (selector, x = undefined, y = undefined) {
+            this.$(selector).moveTo(x, y);
+        });
 
-        browser.addCommand('screenshot', () => browser.takeScreenshot());
+        browser.addCommand('reload', function () {
+            this.reloadSession();
+        });
 
-        browser.addCommand('scroll', () => browser.scrollIntoView());
+        browser.addCommand('screenshot', function () {
+            this.takeScreenshot();
+        });
 
-        browser.addCommand('setCookie', cookieObj => browser.setCookies(cookieObj));
+        browser.addCommand('scroll', function () {
+            this.scrollIntoView();
+        });
 
-        browser.addCommand('setValue', (selector, value) => {
-            const e = $(selector);
-            e.setValue(value);
+        browser.addCommand('setCookie', function (cookieObj) {
+            this.setCookies(cookieObj);
+        });
+
+        browser.addCommand('setValue', function (selector, value) {
+            this.$(selector).setValue(value);
         });
 
         /**
@@ -86,46 +93,71 @@ export default class UpgradeService {
          *
          * REF: https://github.com/webdriverio-boneyard/v4/blob/master/lib/commands/setViewportSize.js
          */
-        browser.addCommand('setViewportSize', (widthHeightObject) => {
+        browser.addCommand('setViewportSize', function (widthHeightObject) {
             const { width, height } = widthHeightObject;
-            browser.setWindowSize(width, height);
+            this.setWindowSize(width, height);
         });
 
         /* Same as getSource. */
-        browser.addCommand('source', () => browser.getPageSource());
-
-        browser.addCommand('switchTab', windowHandle => browser.switchToWindow(windowHandle));
-
-        browser.addCommand('title', () => browser.getTitle());
-
-        browser.addCommand('waitForVisible', (selector, ms, reverse = false) => {
-            const e = $(selector);
-            e.waitForDisplayed(ms, reverse);
+        browser.addCommand('source', function () {
+            return this.getPageSource();
         });
 
-        browser.addCommand('waitForExist', (selector, ms, reverse = false) => {
-            const e = $(selector);
-            e.waitForExist(ms, reverse);
+
+        browser.addCommand('switchTab', function (windowHandle) {
+            this.switchToWindow(windowHandle);
         });
 
-        browser.addCommand('windowHandles', () => browser.getWindowHandles());
+        browser.addCommand('title', function () {
+            return this.getTitle();
+        });
 
-        browser.addCommand('windowHandleFullscreen', () => browser.fullscreenwindow());
+        browser.addCommand('waitForVisible', function (selector, ms, reverse = false) {
+            this.$(selector).waitForDisplayed(ms, reverse);
+        });
 
-        browser.addCommand('windowHandleMaximize', () => browser.maximizeWindow());
-    }
+        browser.addCommand('waitForExist', function (selector, ms, reverse = false) {
+            this.$(selector).waitForExist(ms, reverse);
+        });
 
-    afterCommand(commandName, args, result, error) {
-        if (commandName === '$' && result !== undefined) {
-            addCommandsToElement(result);
-        }
+        browser.addCommand('windowHandles', function () {
+            return this.getWindowHandles();
+        });
 
-        if (commandName === '$$' && result !== undefined) {
-            if (result.length > 0) {
-                result.forEach((element) => {
-                    addCommandsToElement(element);
-                });
+        browser.addCommand('windowHandleFullscreen', function () {
+            this.fullscreenwindow();
+        });
+
+        browser.addCommand('windowHandleMaximize', function () {
+            this.maximizeWindow();
+        });
+
+        // Add commands to element instance
+        browser.addCommand('waitForVisible', function (ms, reverse = false) {
+            /* Handle waitForVisible(true) or waitForVisible(false); Using waitForVisible this way
+                is not valid but worked at one point. Adding for backwards compatability. */
+            if (typeof ms === 'boolean') {
+                this.waitForDisplayed(undefined, ms);
+            } else {
+                this.waitForDisplayed(ms, reverse);
             }
-        }
+        }, true);
+
+        // Add commands to the element scope.
+        browser.addCommand('isVisible', function () {
+            return this.isDisplayed();
+        }, true);
+
+        browser.addCommand('getCssProperty', function (cssProperty) {
+            return this.getCSSProperty(cssProperty);
+        }, true);
+
+        browser.addCommand('clearElement', function () {
+            this.clearValue();
+        }, true);
+
+        browser.addCommand('moveToObject', function (x = undefined, y = undefined) {
+            this.moveTo(x, y);
+        }, true);
     }
 }
