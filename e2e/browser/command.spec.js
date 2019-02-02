@@ -33,20 +33,6 @@ describe('browser command test suite: ', () => {
         assert.equal(browser.isVisible('.heading'), true);
     });
 
-    context('Click link test', () => {
-        after(() => {
-            browser.back();
-        });
-
-        it('browser click test', () => {
-            const selector = 'li > a';
-            const firstLink = $$(selector)[0];
-            const firstLinkHref = firstLink.getAttribute('href');
-            browser.click(selector);
-            assert.equal(browser.getUrl(), firstLinkHref);
-        });
-    });
-
     it('browser getCssProperty test', () => {
         const fontFamily = browser.getCssProperty('h2', 'font-family').value;
         assert(fontFamily, 'helvetica');
@@ -57,5 +43,12 @@ describe('browser command test suite: ', () => {
         const html = browser.getPageSource();
         const $ = cheerio.load(html);
         assert.equal($('h2').text().trim(), h2Text);
+    });
+
+    it('browser reload', () => {
+        const oldSessionId = browser.sessionId;
+        browser.reload();
+        const newSessionId = browser.sessionId;
+        assert.notEqual(oldSessionId, newSessionId);
     });
 });
