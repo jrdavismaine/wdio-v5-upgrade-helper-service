@@ -2,19 +2,20 @@ export default class UpgradeService {
     before() {
         // Add commands to the browser scope.
         browser.addCommand('alertAccept', function () {
-            this.acceptAlert();
+            return this.acceptAlert();
         });
 
         browser.addCommand('alertDismiss', function () {
-            this.dismissAlert();
+            return this.dismissAlert();
         });
 
         browser.addCommand('alertText', function () {
             return this.getAlertText();
         });
 
-        browser.addCommand('click', function (selector) {
-            this.$(selector).click();
+        browser.addCommand('click', async function (selector) {
+            const element = await this.$(selector);
+            return element.click();
         });
 
         browser.addCommand('element', function (selector) {
@@ -26,8 +27,9 @@ export default class UpgradeService {
             return this.$$(selector);
         });
 
-        browser.addCommand('getAttribute', function (selector, attributeName) {
-            return this.$(selector).getAttribute(attributeName);
+        browser.addCommand('getAttribute', async function (selector, attributeName) {
+            const element = await this.$(selector);
+            return element.getAttribute(attributeName);
         });
 
         /**
@@ -35,56 +37,62 @@ export default class UpgradeService {
          * Also if a name parameter is not passed an array of cookies will be returned,
          * otherwise the cookie object is returned. If not found then the return obj will be undefined.
          */
-        browser.addCommand('getCookie', function (name) {
+        browser.addCommand('getCookie', async function (name) {
             if (name === undefined) {
                 return this.getCookies();
             }
-            const cookie = this.getCookies(name);
+            const cookie = await this.getCookies(name);
             return cookie[0];
         });
 
-        browser.addCommand('getCssProperty', function (selector, propertyName) {
-            return this.$(selector).getCSSProperty(propertyName);
+        browser.addCommand('getCssProperty', async function (selector, propertyName) {
+            const element = await this.$(selector);
+            return element.getCSSProperty(propertyName);
         });
 
         browser.addCommand('getSource', function () {
             return this.getPageSource();
         });
 
-        browser.addCommand('getText', function (selector) {
-            return this.$(selector).getText();
+        browser.addCommand('getText', async function (selector) {
+            const element = await this.$(selector);
+            return element.getText();
         });
 
-        browser.addCommand('isExisting', function (selector) {
-            return this.$(selector).isExisting();
+        browser.addCommand('isExisting', async function (selector) {
+            const element = await this.$(selector);
+            return element.isExisting();
         });
 
-        browser.addCommand('isVisible', function (selector) {
-            return this.$(selector).isDisplayed();
+        browser.addCommand('isVisible', async function (selector) {
+            const element = await this.$(selector);
+            return element.isDisplayed();
         });
 
-        browser.addCommand('moveToObject', function (selector, x = undefined, y = undefined) {
-            this.$(selector).moveTo(x, y);
+        browser.addCommand('moveToObject', async function (selector, x = undefined, y = undefined) {
+            const element = await this.$(selector);
+            return element.moveTo(x, y);
         });
 
         browser.addCommand('reload', function () {
-            this.reloadSession();
+            return this.reloadSession();
         });
 
         browser.addCommand('screenshot', function () {
-            this.takeScreenshot();
+            return this.takeScreenshot();
         });
 
         browser.addCommand('scroll', function () {
-            this.scrollIntoView();
+            return this.scrollIntoView();
         });
 
         browser.addCommand('setCookie', function (cookieObj) {
-            this.setCookies(cookieObj);
+            return this.setCookies(cookieObj);
         });
 
-        browser.addCommand('setValue', function (selector, value) {
-            this.$(selector).setValue(value);
+        browser.addCommand('setValue', async function (selector, value) {
+            const element = await this.$(selector);
+            return element.setValue(value);
         });
 
         /**
@@ -95,7 +103,7 @@ export default class UpgradeService {
          */
         browser.addCommand('setViewportSize', function (widthHeightObject) {
             const { width, height } = widthHeightObject;
-            this.setWindowSize(width, height);
+            return this.setWindowSize(width, height);
         });
 
         /* Same as getSource. */
@@ -105,19 +113,21 @@ export default class UpgradeService {
 
 
         browser.addCommand('switchTab', function (windowHandle) {
-            this.switchToWindow(windowHandle);
+            return this.switchToWindow(windowHandle);
         });
 
         browser.addCommand('title', function () {
             return this.getTitle();
         });
 
-        browser.addCommand('waitForVisible', function (selector, ms, reverse = false) {
-            this.$(selector).waitForDisplayed(ms, reverse);
+        browser.addCommand('waitForVisible', async function (selector, ms, reverse = false) {
+            const element = await this.$(selector);
+            return element.waitForDisplayed(ms, reverse);
         });
 
-        browser.addCommand('waitForExist', function (selector, ms, reverse = false) {
-            this.$(selector).waitForExist(ms, reverse);
+        browser.addCommand('waitForExist', async function (selector, ms, reverse = false) {
+            const element = await this.$(selector);
+            return element.waitForExist(ms, reverse);
         });
 
         browser.addCommand('windowHandles', function () {
@@ -125,11 +135,11 @@ export default class UpgradeService {
         });
 
         browser.addCommand('windowHandleFullscreen', function () {
-            this.fullscreenwindow();
+            return this.fullscreenwindow();
         });
 
         browser.addCommand('windowHandleMaximize', function () {
-            this.maximizeWindow();
+            return this.maximizeWindow();
         });
 
         // Add commands to element instance
@@ -137,10 +147,9 @@ export default class UpgradeService {
             /* Handle waitForVisible(true) or waitForVisible(false); Using waitForVisible this way
                 is not valid but worked at one point. Adding for backwards compatability. */
             if (typeof ms === 'boolean') {
-                this.waitForDisplayed(undefined, ms);
-            } else {
-                this.waitForDisplayed(ms, reverse);
+                return this.waitForDisplayed(undefined, ms);
             }
+            return this.waitForDisplayed(ms, reverse);
         }, true);
 
         // Add commands to the element scope.
@@ -153,11 +162,11 @@ export default class UpgradeService {
         }, true);
 
         browser.addCommand('clearElement', function () {
-            this.clearValue();
+            return this.clearValue();
         }, true);
 
         browser.addCommand('moveToObject', function (x = undefined, y = undefined) {
-            this.moveTo(x, y);
+            return this.moveTo(x, y);
         }, true);
     }
 }
