@@ -1,0 +1,36 @@
+import assert from 'assert';
+
+describe('window size command tests', () => {
+    let viewportSize;
+    before(() => {
+        const screenAttributes = browser.execute('return window.screen');
+        viewportSize = {
+            width: screenAttributes.width,
+            height: screenAttributes.height,
+        };
+    });
+
+    context('Change screen size, verify height and width is correct', () => {
+        const newWidth = 800;
+        const newHeight = 600;
+        let newWindowDimensions;
+        before(() => {
+            console.log(viewportSize);
+            const newSize = {
+                width: newWidth,
+                height: newHeight,
+            };
+            console.log(newSize);
+            browser.setWindowSize(newWidth, newHeight);
+            newWindowDimensions = browser.execute('return window.screen');
+        });
+
+        it('Confirm width = 800', () => {
+            assert.equal(newWindowDimensions.width, 800);
+        });
+
+        it('Confirm height = 600', () => {
+            assert.equal(newWindowDimensions.height, 600);
+        });
+    });
+});
