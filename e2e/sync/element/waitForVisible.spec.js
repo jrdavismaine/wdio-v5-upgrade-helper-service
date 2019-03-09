@@ -16,22 +16,12 @@ describe('waitForVisible command test suite: ', () => {
         assert.doesNotThrow(() => { e.waitForVisible(1000); });
     });
 
-    it('element exists: element.waitForVisible(false) no error', () => {
-        const e = $('.heading');
-        assert.doesNotThrow(() => { e.waitForVisible(false); });
-    });
-
     it('element exists: element.waitForVisible(1000, false) no error', () => {
         const e = $('.heading');
         assert.doesNotThrow(() => { e.waitForVisible(1000, false); });
     });
 
-    it.skip('element exists: element.waitForVisible(true) error, element always visible', () => {
-        const e = $('.heading');
-        assert.throws(() => { e.waitForVisible(true); });
-    });
-
-    it.skip('element exists: element.waitForVisible(1000, true) error, element always visible', () => {
+    it('element exists: element.waitForVisible(1000, true) error, element always visible', () => {
         const e = $('.heading');
         assert.throws(() => { e.waitForVisible(1000, true); });
     });
@@ -47,23 +37,8 @@ describe('waitForVisible command test suite: ', () => {
         assert.throws(() => { e.waitForVisible(1000); });
     });
 
-    it('element does not exist: element.waitForVisible(false) error', () => {
-        const e = $('.noheading');
-        assert.throws(() => { e.waitForVisible(false); });
-    });
-
     it('element does not exist: element.waitForVisible(1000, false) error', () => {
         const e = $('.noheading');
         assert.throws(() => { e.waitForVisible(1000, false); });
-    });
-
-    it('element does not exist: element.waitForVisible(1000, true) error', () => {
-        const e = $('.noheading');
-        assert.throws(() => { e.waitForVisible(1000, true); });
-    });
-
-    it('element does not exist: element.waitForVisible(true) error', () => {
-        const e = $('.noheading');
-        assert.throws(() => { e.waitForVisible(true); });
     });
 });
