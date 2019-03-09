@@ -1,15 +1,15 @@
 export default class UpgradeService {
     before() {
         // Add commands to the browser scope.
-        browser.addCommand('alertAccept', function () {
+        browser.addCommand('alertAccept', async function () {
             return this.acceptAlert();
         });
 
-        browser.addCommand('alertDismiss', function () {
+        browser.addCommand('alertDismiss', async function () {
             return this.dismissAlert();
         });
 
-        browser.addCommand('alertText', function () {
+        browser.addCommand('alertText', async function () {
             return this.getAlertText();
         });
 
@@ -18,12 +18,12 @@ export default class UpgradeService {
             return element.click();
         });
 
-        browser.addCommand('element', function (selector) {
+        browser.addCommand('element', async function (selector) {
             return this.$(selector);
         });
 
 
-        browser.addCommand('elements', function (selector) {
+        browser.addCommand('elements', async function (selector) {
             return this.$$(selector);
         });
 
@@ -50,7 +50,7 @@ export default class UpgradeService {
             return element.getCSSProperty(propertyName);
         });
 
-        browser.addCommand('getSource', function () {
+        browser.addCommand('getSource', async function () {
             return this.getPageSource();
         });
 
@@ -74,19 +74,19 @@ export default class UpgradeService {
             return element.moveTo(x, y);
         });
 
-        browser.addCommand('reload', function () {
+        browser.addCommand('reload', async function () {
             return this.reloadSession();
         });
 
-        browser.addCommand('screenshot', function () {
+        browser.addCommand('screenshot', async function () {
             return this.takeScreenshot();
         });
 
-        browser.addCommand('scroll', function () {
+        browser.addCommand('scroll', async function () {
             return this.scrollIntoView();
         });
 
-        browser.addCommand('setCookie', function (cookieObj) {
+        browser.addCommand('setCookie', async function (cookieObj) {
             return this.setCookies(cookieObj);
         });
 
@@ -101,22 +101,22 @@ export default class UpgradeService {
          *
          * REF: https://github.com/webdriverio-boneyard/v4/blob/master/lib/commands/setViewportSize.js
          */
-        browser.addCommand('setViewportSize', function (widthHeightObject) {
+        browser.addCommand('setViewportSize', async function (widthHeightObject) {
             const { width, height } = widthHeightObject;
             return this.setWindowSize(width, height);
         });
 
         /* Same as getSource. */
-        browser.addCommand('source', function () {
+        browser.addCommand('source', async function () {
             return this.getPageSource();
         });
 
 
-        browser.addCommand('switchTab', function (windowHandle) {
+        browser.addCommand('switchTab', async function (windowHandle) {
             return this.switchToWindow(windowHandle);
         });
 
-        browser.addCommand('title', function () {
+        browser.addCommand('title', async function () {
             return this.getTitle();
         });
 
@@ -130,42 +130,37 @@ export default class UpgradeService {
             return element.waitForExist(ms, reverse);
         });
 
-        browser.addCommand('windowHandles', function () {
+        browser.addCommand('windowHandles', async function () {
             return this.getWindowHandles();
         });
 
-        browser.addCommand('windowHandleFullscreen', function () {
+        browser.addCommand('windowHandleFullscreen', async function () {
             return this.fullscreenwindow();
         });
 
-        browser.addCommand('windowHandleMaximize', function () {
+        browser.addCommand('windowHandleMaximize', async function () {
             return this.maximizeWindow();
         });
 
         // Add commands to element instance
-        browser.addCommand('waitForVisible', function (ms, reverse = false) {
-            /* Handle waitForVisible(true) or waitForVisible(false); Using waitForVisible this way
-                is not valid but worked at one point. Adding for backwards compatability. */
-            if (typeof ms === 'boolean') {
-                return this.waitForDisplayed(undefined, ms);
-            }
+        browser.addCommand('waitForVisible', async function (ms, reverse = false) {
             return this.waitForDisplayed(ms, reverse);
         }, true);
 
         // Add commands to the element scope.
-        browser.addCommand('isVisible', function () {
+        browser.addCommand('isVisible', async function () {
             return this.isDisplayed();
         }, true);
 
-        browser.addCommand('getCssProperty', function (cssProperty) {
+        browser.addCommand('getCssProperty', async function (cssProperty) {
             return this.getCSSProperty(cssProperty);
         }, true);
 
-        browser.addCommand('clearElement', function () {
+        browser.addCommand('clearElement', async function () {
             return this.clearValue();
         }, true);
 
-        browser.addCommand('moveToObject', function (x = undefined, y = undefined) {
+        browser.addCommand('moveToObject', async function (x = undefined, y = undefined) {
             return this.moveTo(x, y);
         }, true);
     }
