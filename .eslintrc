@@ -9,7 +9,8 @@
     "max-len": ["error", { "code": 122 }],
     "class-methods-use-this": "off",
     "no-unused-vars": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "plugins": ["wdio"],
   "env": {

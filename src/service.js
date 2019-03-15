@@ -163,5 +163,9 @@ export default class UpgradeService {
         browser.addCommand('moveToObject', async function (x = undefined, y = undefined) {
             return this.moveTo(x, y);
         }, true);
+
+        browser.addCommand('selectByValue', async function (optionText) {
+            return this.selectByVisibleText(optionText);
+        }, true);
     }
 }

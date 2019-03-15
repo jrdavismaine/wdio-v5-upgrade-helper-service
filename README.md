@@ -50,6 +50,7 @@ services: ['selenium-standalone', 'v5-upgrade-helper'],
 | element | moveToObject | moveTo |
 | element | isVisible | isDisplayed |
 | element | waitForVisible | waitForDisplayed |
+| element | selectByValue | selectByVisibleText |
 
 (1) The param for switchToWindow is a window handle string
 which should be obtained from the browser.getWindowHandles command.
