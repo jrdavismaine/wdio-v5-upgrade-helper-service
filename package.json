@@ -1,12 +1,13 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Utility library to allow renamed webdriverio v4 commands to be used with webdriverio 5.0. ",
   "main": "./build/index",
   "scripts": {
     "lint": "eslint --fix src/**/*.js e2e/**/*.js",
     "build": "npm run lint && rimraf build && babel src --out-dir build",
-    "test": "wdio wdio.conf.js"
+    "standalone": "mocha --timeout 99999 e2e/async/standalonetest.spec.js",
+    "test": "wdio wdio.conf.js && npm run standalone"
   },
   "pre-commit": [
     "build",
