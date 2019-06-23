@@ -2,7 +2,7 @@ const assert = require('assert');
 const launchBrowser = require('./fixtures/launchBrowser');
 const { startServer } = require('./fixtures/startSeleniumServer');
 
-describe('Standalone mode test', async function() {
+describe('Standalone mode test', async () => {
     let selServerProcess;
     let browser;
     before('setup', async () => {
@@ -10,15 +10,14 @@ describe('Standalone mode test', async function() {
         browser = await launchBrowser();
     });
 
-    after('teardown', async function() {
+    after('teardown', async () => {
         await browser.deleteSession();
         // Avoid race condition from when browser closes and server terminated.
         await browser.pause(3000);
         await selServerProcess.kill();
-        
     });
 
-    it('browser.elements, browser.element command test', async function() {
+    it('browser.elements, browser.element command test', async () => {
         await browser.url('https://duckduckgo.com/');
         const inputElems = await browser.elements('#search_form_input_homepage');
         await inputElems[0].setValue('WebdriverIO');
@@ -28,7 +27,7 @@ describe('Standalone mode test', async function() {
         assert(title.indexOf('WebdriverIO') > -1);
     });
 
-    it('browser.getText, browser.getAttribute, browser.getCssProperty, element.getCssProperty command test', async function() {
+    it('browser.getText, browser.getAttribute, browser.getCssProperty, element.getCssProperty command test', async () => {
         await browser.url('https://the-internet.herokuapp.com/');
         const taglineText = await browser.getText('#content h2');
         assert(taglineText.indexOf('Available Examples') > -1);
@@ -41,7 +40,7 @@ describe('Standalone mode test', async function() {
         assert.equal(colorStyle.property, 'color');
     });
 
-    it('browser.waitForVisible, browser.isExisting command test', async function() {
+    it('browser.waitForVisible, browser.isExisting command test', async () => {
         await browser.url('https://the-internet.herokuapp.com/login');
         const username = await browser.element('#username');
         const password = await browser.element('#password');
@@ -53,7 +52,7 @@ describe('Standalone mode test', async function() {
         assert.equal(await browser.isExisting('.subheader'), true);
     });
 
-    it('element.waitForVisible, element.getText command test', async function() {
+    it('element.waitForVisible, element.getText command test', async () => {
         await browser.url('https://the-internet.herokuapp.com/status_codes');
         const statusCode200Link = await browser.element('li a');
         await statusCode200Link.click();
