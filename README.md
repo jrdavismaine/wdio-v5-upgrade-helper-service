@@ -66,3 +66,4 @@ browser.switchToWindow(windowHandle); // V5
 | element | getElementSize | Kept getting Wrong parameters applied for getElementSize. | Rename to getSize. |
 | browser | execute | Search and replace easier. | Remove .value from all browser.execute scripts. |
 | element | waitForVisible(true\|false) | As of version 5.7.0 passing a boolean value as the only arguement produced inconsistent results. | Do not call waitForVisible with just a boolean argument, always include timeout as well. Other variations of waitVisible, e.g. waitForVisible(), waitForVisible(5000) continue to work as intended. waitForVisible(true) does not though. |
+| browser | deleteCookie | deleteCookie without a cookie name will throw an error. Unfortunately I have not been able to override deleteCookie(). | Rename all instances of browser.deleteCookie() to browser.deleteCookies(). Note browser.deleteCookie(cookieName) still works great. |
