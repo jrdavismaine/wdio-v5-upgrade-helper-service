@@ -28,6 +28,7 @@ services: ['selenium-standalone', 'v5-upgrade-helper'],
 | browser | getCssProperty | N/A |
 | browser | getSource | getPageSource |
 | browser | getText | N/A |
+| browser | getViewportSize | getWindowSize |
 | browser | isExisting | N/A |
 | browser | isVisible | N/A |
 | browser | moveToObject | N/A |

@@ -59,6 +59,15 @@ export default class UpgradeService {
             return element.getText();
         });
 
+        // In V4 dimension with choices width|height were valid, V5 getWindowSize ignores any function parameters.
+        // Adding for backwards compatability.
+        browser.addCommand('getViewportSize', async function (dimension = '') {
+            if (dimension.toLowerCase() === 'width' || dimension.toLowerCase() === 'height') {
+                return this.getWindowSize()[dimension];
+            }
+            return this.getWindowSize();
+        });
+
         browser.addCommand('isExisting', async function (selector) {
             const element = await this.$(selector);
             return element.isExisting();
