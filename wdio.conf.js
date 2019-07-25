@@ -70,6 +70,7 @@ exports.config = {
     logLevel: 'error',
     //
     // Warns when a deprecated command is used
+    
     deprecationWarnings: true,
     //
     // If you only want to run your tests until a specific amount of tests have failed use
