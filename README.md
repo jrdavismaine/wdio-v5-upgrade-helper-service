@@ -1,5 +1,5 @@
 # wdio-v5-upgrade-helper-service
-This plugin will allow developers to upgrade to webdriver 5.0 without having to change all of the renamed v4 commands in their codebase.
+This plugin will allow developers to upgrade to WebdriverIO 5.0 without having to change all of the renamed v4 commands in their codebase.
 
 Note this plugin works best with WebdriverIO version 5.7.0 or greater. Please upgrade to the latest version of [webdriverio](https://github.com/webdriverio/webdriverio) if you have not done so already.
 
@@ -32,7 +32,7 @@ services: ['selenium-standalone', 'v5-upgrade-helper'],
 | browser | isExisting | N/A |
 | browser | isVisible | N/A |
 | browser | moveToObject | N/A |
-| browser | reload | reloadSession | 
+| browser | reload | reloadSession |    
 | browser | screenshot | takeScreenshot |
 | browser | setCookie | setCookies |
 | browser | setValue | N/A |
