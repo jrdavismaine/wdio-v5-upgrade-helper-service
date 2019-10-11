@@ -68,3 +68,6 @@ browser.switchToWindow(windowHandle); // V5
 | browser | execute | Search and replace easier. | Remove .value from all browser.execute scripts. |
 | element | waitForVisible(true\|false) | As of version 5.7.0 passing a boolean value as the only arguement produced inconsistent results. | Do not call waitForVisible with just a boolean argument, always include timeout as well. Other variations of waitVisible, e.g. waitForVisible(), waitForVisible(5000) continue to work as intended. waitForVisible(true) does not though. |
 | browser | deleteCookie | deleteCookie without a cookie name will throw an error. Unfortunately I have not been able to override deleteCookie(). | Rename all instances of browser.deleteCookie() to browser.deleteCookies(). Note browser.deleteCookie(cookieName) still works great. |
+
+# Deprecation notice
+This adapter was created to help developers migrate their code from WebdriverIO 4 to 5, not as a permanent solution. My plan is to deprecate this repo by January 1st, 2020. At this date WebdriverIO 5 will be one year old.
