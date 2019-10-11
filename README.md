@@ -70,4 +70,4 @@ browser.switchToWindow(windowHandle); // V5
 | browser | deleteCookie | deleteCookie without a cookie name will throw an error. Unfortunately I have not been able to override deleteCookie(). | Rename all instances of browser.deleteCookie() to browser.deleteCookies(). Note browser.deleteCookie(cookieName) still works great. |
 
 # Deprecation notice
-This adapter was created to help developers migrate their code from WebdriverIO 4 to 5, not as a permanent solution. My plan is to deprecate this repo by January 1st, 2020. At this date WebdriverIO 5 will be one year old.
+This adapter was created to help developers migrate their code from WebdriverIO 4 to 5, not as a permanent solution. My plan is to deprecate this repo by January 1st, 2020. Up until 1/1/2020 I will continue to add code, upgrade dependencies to this repo, after 1/1/20 it will no longer be maintained. The reason for this decision is WebdriverIO 5 will be one year old at this point and you probably should have upgraded by then.
