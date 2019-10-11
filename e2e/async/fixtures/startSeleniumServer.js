@@ -8,7 +8,7 @@ const startServer = () => new Promise((resolve, reject) => {
         resolve(cp);
     });
 })
-    .then(res => res)
+    .then((res) => res)
     .catch((e) => {
         throw new Error(e);
     });
