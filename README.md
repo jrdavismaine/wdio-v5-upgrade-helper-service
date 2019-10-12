@@ -71,5 +71,3 @@ browser.switchToWindow(windowHandle); // V5
 
 # Deprecation notice
 This adapter was created to help developers migrate their code from WebdriverIO 4 to 5 and not meant as a permanent solution. My plan is to deprecate this repo by January 1st, 2020. At this time the repo will no longer be maintained. Until then I will continue to add tests as necessary and upgrade the dependencies.
-=======
-This adapter was created to help developers migrate their code from WebdriverIO 4 to 5, not as a permanent solution. My plan is to deprecate this repo on January 1st, 2020. Up until 1/1/2020 I will continue to add code as needed, upgrade dependencies. After 1/1/20 the repo will no longer be maintained.
