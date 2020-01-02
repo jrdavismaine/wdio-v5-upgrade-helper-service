@@ -1,7 +1,9 @@
 # wdio-v5-upgrade-helper-service
-This plugin will allow developers to upgrade to WebdriverIO 5.0 / 6.0 without having to change all of the renamed v4 commands in their codebase.
+This plugin will allow developers to upgrade to WebdriverIO 5.0 without having to change all of the renamed v4 commands in their codebase.
 
 Note this plugin works best with WebdriverIO version 5.7.0 or greater. Please upgrade to the latest version of [webdriverio](https://github.com/webdriverio/webdriverio) if you have not done so already.
+
+TODO: Test this repo with the new WebdriverIO 6 alpha (Released end of December 2019).
 
 # Install via npm
 ```
