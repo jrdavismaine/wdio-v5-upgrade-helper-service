@@ -18,13 +18,11 @@ describe('Standalone mode test', async () => {
     });
 
     it('browser.elements, browser.element command test', async () => {
-        await browser.url('https://duckduckgo.com/');
-        const inputElems = await browser.elements('#search_form_input_homepage');
-        await inputElems[0].setValue('WebdriverIO');
-        const submitBtn = await browser.element('#search_button_homepage');
-        await submitBtn.click();
-        const title = await browser.getTitle();
-        assert(title.indexOf('WebdriverIO') > -1);
+        await browser.url('https://the-internet.herokuapp.com/');
+        const links = await browser.elements('#content ul li');
+        assert.ok(links.length > 0);
+        const heading = await browser.element('h1');
+        assert.ok(await heading.getText() === 'Welcome to the-internet');
     });
 
     it('browser.getText, browser.getAttribute, browser.getCssProperty, element.getCssProperty command test', async () => {

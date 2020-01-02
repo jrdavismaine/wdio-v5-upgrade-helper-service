@@ -1,5 +1,5 @@
 # wdio-v5-upgrade-helper-service
-This plugin will allow developers to upgrade to WebdriverIO 5.0 without having to change all of the renamed v4 commands in their codebase.
+This plugin will allow developers to upgrade to WebdriverIO 5.0 / 6.0 without having to change all of the renamed v4 commands in their codebase.
 
 Note this plugin works best with WebdriverIO version 5.7.0 or greater. Please upgrade to the latest version of [webdriverio](https://github.com/webdriverio/webdriverio) if you have not done so already.
 
@@ -68,6 +68,3 @@ browser.switchToWindow(windowHandle); // V5
 | browser | execute | Search and replace easier. | Remove .value from all browser.execute scripts. |
 | element | waitForVisible(true\|false) | As of version 5.7.0 passing a boolean value as the only arguement produced inconsistent results. | Do not call waitForVisible with just a boolean argument, always include timeout as well. Other variations of waitVisible, e.g. waitForVisible(), waitForVisible(5000) continue to work as intended. waitForVisible(true) does not though. |
 | browser | deleteCookie | deleteCookie without a cookie name will throw an error. Unfortunately I have not been able to override deleteCookie(). | Rename all instances of browser.deleteCookie() to browser.deleteCookies(). Note browser.deleteCookie(cookieName) still works great. |
-
-# Deprecation notice
-This adapter was created to help developers migrate their code from WebdriverIO 4 to 5 and not meant as a permanent solution. My plan is to deprecate this repo by January 1st, 2020. At this time the repo will no longer be maintained. Until then I will continue to add tests as necessary and upgrade the dependencies.
