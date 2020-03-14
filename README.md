@@ -1,7 +1,7 @@
 # wdio-v5-upgrade-helper-service
 This plugin will allow developers to upgrade to WebdriverIO versions 5 and 6 without having to change all of the renamed v4 commands in their codebase.
 
-Note this plugin works best with WebdriverIO version 5.7.0 or greater. Please upgrade to the latest version of [webdriverio](https://github.com/webdriverio/webdriverio) if you have not done so already.
+Note this plugin works best with WebdriverIO version ^5.7.*. Please upgrade to the latest version of [webdriverio](https://github.com/webdriverio/webdriverio) if you have not done so already.
 
 # Install via npm
 ```
@@ -70,4 +70,4 @@ browser.switchToWindow(windowHandle); // V5
 | browser | deleteCookie | deleteCookie without a cookie name will throw an error. Unfortunately I have not been able to override deleteCookie(). | Rename all instances of browser.deleteCookie() to browser.deleteCookies(). Note browser.deleteCookie(cookieName) still works great. |
 
 # Misc
-Tested repo against v6.0.0-alpha.0 on 1/2/2020, all tests passed. Library should be compatible with WebdriverIO 6 going forward. FYI. 
+Tests are failing when run against v6.0.0-beta.0. As of March 2020 this library only works with WebdriverIO version 5. 
