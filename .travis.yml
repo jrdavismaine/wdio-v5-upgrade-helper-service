@@ -3,7 +3,7 @@ addons:
   chrome: stable
 language: node_js
 node_js:
-- 8
+- 10 
 before_script:
 - # start your web application and listen on `localhost`
 - ls -la
