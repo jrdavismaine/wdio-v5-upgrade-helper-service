@@ -21,11 +21,6 @@ describe('waitForVisible command test suite: ', () => {
         assert.doesNotThrow(() => { e.waitForVisible(1000, false); });
     });
 
-    it('element exists: element.waitForVisible(1000, true) error, element always visible', () => {
-        const e = $('.heading');
-        assert.throws(() => { e.waitForVisible(1000, true); });
-    });
-
     /* ELEMENT DOES NOT EXIST ON PAGE TESTS */
     it('element does not exist: element.waitForVisible() error', () => {
         const e = $('.noheading');

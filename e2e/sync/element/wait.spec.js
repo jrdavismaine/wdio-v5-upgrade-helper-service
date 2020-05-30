@@ -12,12 +12,6 @@ describe('wait commands test suite: ', () => {
         assert($('#elem').isVisible());
     });
 
-    it('Element is visible for 5000 ms, then hidden', () => {
-        domElementUtility(true, 5000);
-        $('#elem').waitForVisible(7000, true);
-        assert(!$('#elem').isVisible());
-    });
-
     it('Element is not visible by timeout', () => {
         domElementUtility(false, 7000);
         $('#elem').waitForVisible(5000);
