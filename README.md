@@ -6,9 +6,6 @@ This plugin will allow developers to upgrade to WebdriverIO versions 5 and 6 wit
 
 Note this plugin works best with WebdriverIO version ^5.7.*. Please upgrade to the latest version of [webdriverio](https://github.com/webdriverio/webdriverio) if you have not done so already.
 
-# Current Status
-The current version WebdriverIO as of 2/5/2021 is v7.0.0-beta.3. Deprecating this repo because of this reason. This repo was created to help people migrate from WebdriverIO version 4 to 5. Hopefully this helped with version 6. Please upgrade to version 6.0 / 7.0 to have the best experience with WebdriverIO. 
-
 # Install via npm
 ```
 npm install wdio-v5-upgrade-helper-service
