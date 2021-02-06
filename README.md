@@ -1,5 +1,5 @@
 # DEPRECATED FEBRUARY 2021
-DEPRECATED Feb 2021. TI would strongly suggest upgrading to [WebdriverIO Version 6](https://github.com/webdriverio/webdriverio). Cheers, thank you for your support! now upgrade.
+DEPRECATED Feb 2021. I would strongly suggest upgrading to [WebdriverIO Version 6](https://github.com/webdriverio/webdriverio). Cheers, thank you for your support! now upgrade.
 
 # wdio-v5-upgrade-helper-service
 This plugin will allow developers to upgrade to WebdriverIO versions 5 and 6 without having to change all of the renamed v4 commands in their codebase.
