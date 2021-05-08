@@ -17,7 +17,7 @@ describe('Alert commands test suite: ', () => {
 
         it('alertAccept', () => {
             browser.alertAccept();
-            assert.equal($('#result').getText(), 'You successfuly clicked an alert');
+            assert.equal($('#result').getText(), 'You successfully clicked an alert');
         });
     });
 
@@ -28,7 +28,7 @@ describe('Alert commands test suite: ', () => {
 
         it('Accept alert', () => {
             browser.alertDismiss();
-            assert.equal($('#result').getText(), 'You successfuly clicked an alert');
+            assert.equal($('#result').getText(), 'You successfully clicked an alert');
         });
     });
 
