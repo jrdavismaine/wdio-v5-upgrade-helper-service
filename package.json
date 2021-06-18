@@ -1,7 +1,7 @@
 {
   "name": "wdio-v5-upgrade-helper-service",
-  "version": "3.0.4",
-  "description": "Utility library to allow renamed webdriverio v4 commands to be used with webdriverio 5.0. ",
+  "version": "3.0.5",
+  "description": "Utility library to allow renamed webdriverio v4 commands to be used with new versions of WebdriverIO.",
   "main": "./build/index",
   "scripts": {
     "lint": "eslint --fix src/**/*.js e2e/**/*.js",
