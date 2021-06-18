@@ -11,6 +11,6 @@ describe('browser click command test suite: ', () => {
         const firstLink = $$(selector)[0];
         const firstLinkHref = firstLink.getAttribute('href');
         browser.click(selector);
-        assert.equal(browser.getUrl(), firstLinkHref);
+        assert.equal(browser.getUrl().indexOf(firstLinkHref) > -1, true);
     });
 });

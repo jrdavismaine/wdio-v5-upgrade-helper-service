@@ -22,7 +22,6 @@ export default class UpgradeService {
             return this.$(selector);
         });
 
-
         browser.addCommand('elements', async function (selector) {
             return this.$$(selector);
         });
@@ -119,7 +118,6 @@ export default class UpgradeService {
         browser.addCommand('source', async function () {
             return this.getPageSource();
         });
-
 
         browser.addCommand('switchTab', async function (windowHandle) {
             return this.switchToWindow(windowHandle);
