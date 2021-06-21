@@ -21,6 +21,7 @@ describe('Alert commands test suite: ', () => {
         });
     });
 
+    // QA TEST
     context('Alert box: alertDismiss command alias test', () => {
         before(() => {
             browser.$$('button')[0].click();
